@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="404 Not Found"
+  description="The page you're looking for doesn't exist or has been moved."
+>
+  <section class="min-h-screen flex items-center justify-center pt-20">
+    <div class="max-w-content mx-auto px-6 md:px-12 lg:px-24 text-center">
+      <!-- Animated 404 -->
+      <div class="relative mb-8">
+        <div class="text-[120px] md:text-[200px] font-bold leading-none gradient-text select-none">
+          404
+        </div>
+        <div class="absolute inset-0 text-[120px] md:text-[200px] font-bold leading-none text-via-orange/10 blur-xl">
+          404
+        </div>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl font-bold text-via-gray-dark mb-4">
+        Oops! Page Not Found
+      </h1>
+      <p class="text-xl text-via-gray-light mb-10 max-w-md mx-auto">
+        The page you're looking for doesn't exist or has been moved. 
+        Let's get you back on track.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/" class="btn-primary">
+          Back to Home
+        </a>
+        <a href="/contact/" class="btn-secondary">
+          Contact Support
+        </a>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="mt-16 pt-16 border-t border-gray-200">
+        <p class="text-sm text-via-gray mb-6">You might be looking for:</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="/hosting/" class="text-via-gray hover:text-via-orange transition-colors">
+            Hosting Plans
+          </a>
+          <span class="text-gray-300">•</span>
+          <a href="/portfolio/" class="text-via-gray hover:text-via-orange transition-colors">
+            Our Portfolio
+          </a>
+          <span class="text-gray-300">•</span>
+          <a href="/support/" class="text-via-gray hover:text-via-orange transition-colors">
+            Support Center
+          </a>
+          <span class="text-gray-300">•</span>
+          <a href="/contact/" class="text-via-gray hover:text-via-orange transition-colors">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

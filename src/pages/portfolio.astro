@@ -1,0 +1,280 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = ['All', 'Web Design', 'E-Commerce', 'Branding', 'Web Apps'];
+
+const projects = [
+  {
+    title: 'Modern Furniture Co.',
+    category: 'Web Design',
+    description: 'Minimalist e-commerce experience for a premium furniture brand',
+    color: 'from-orange-400 to-red-500',
+    year: '2025'
+  },
+  {
+    title: 'TechStart Dashboard',
+    category: 'Web Apps',
+    description: 'Analytics dashboard for SaaS startup with real-time data',
+    color: 'from-gray-600 to-gray-800',
+    year: '2025'
+  },
+  {
+    title: 'Artisan Coffee',
+    category: 'Branding',
+    description: 'Complete brand identity for specialty coffee roaster',
+    color: 'from-amber-600 to-orange-700',
+    year: '2024'
+  },
+  {
+    title: 'FitLife App',
+    category: 'Web Apps',
+    description: 'Fitness tracking application with social features',
+    color: 'from-red-500 to-pink-600',
+    year: '2024'
+  },
+  {
+    title: 'Luxe Fashion',
+    category: 'E-Commerce',
+    description: 'High-end fashion boutique with AR try-on features',
+    color: 'from-purple-600 to-indigo-700',
+    year: '2024'
+  },
+  {
+    title: 'Green Energy Corp',
+    category: 'Web Design',
+    description: 'Corporate website for renewable energy company',
+    color: 'from-emerald-500 to-teal-600',
+    year: '2023'
+  },
+  {
+    title: 'Urban Architecture',
+    category: 'Branding',
+    description: 'Brand refresh for award-winning architecture firm',
+    color: 'from-slate-600 to-slate-800',
+    year: '2023'
+  },
+  {
+    title: 'Fresh Market',
+    category: 'E-Commerce',
+    description: 'Online grocery platform with same-day delivery',
+    color: 'from-green-500 to-emerald-600',
+    year: '2023'
+  }
+];
+
+const testimonials = [
+  {
+    quote: "Via Media transformed our online presence. Our conversion rate increased by 150% after the redesign.",
+    author: "Sarah Chen",
+    role: "CEO, TechStart",
+    avatar: "SC"
+  },
+  {
+    quote: "The team's attention to detail and creative vision exceeded our expectations. Truly exceptional work.",
+    author: "Marcus Johnson",
+    role: "Founder, Luxe Fashion",
+    avatar: "MJ"
+  },
+  {
+    quote: "Professional, responsive, and incredibly talented. They delivered on time and on budget.",
+    author: "Emily Rodriguez",
+    role: "Marketing Director, Fresh Market",
+    avatar: "ER"
+  }
+];
+---
+
+<Layout 
+  title="Portfolio"
+  description="Explore our portfolio of web design, e-commerce, branding, and web application projects. See how we've helped businesses succeed."
+>
+  <!-- Hero Section -->
+  <section class="section-padding pt-32">
+    <div class="max-w-content mx-auto">
+      <div class="text-center mb-16">
+        <span class="section-label">Our Work</span>
+        <h1 class="text-display-md md:text-display-lg font-bold mb-6">
+          Crafting Digital <span class="gradient-text">Masterpieces</span>
+        </h1>
+        <p class="text-xl text-via-gray-light max-w-2xl mx-auto">
+          Explore our portfolio of award-winning designs and innovative 
+          digital solutions.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        {categories.map((category) => (
+          <button
+            class="filter-btn px-6 py-3 rounded-full text-sm font-medium
+                   bg-white text-via-gray border border-gray-200
+                   hover:border-via-orange hover:text-via-orange
+                   transition-all duration-300
+                   data-active:bg-via-orange data-active:text-white data-active:border-via-orange"
+            data-filter={category.toLowerCase().replace(' ', '-')}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="section-padding pt-0 bg-white">
+    <div class="max-w-content mx-auto">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+        {projects.map((project, index) => (
+          <article 
+            class="project-card group relative overflow-hidden rounded-2xl cursor-pointer animate-fade-in"
+            data-category={project.category.toLowerCase().replace(' ', '-')}
+            style={`animation-delay: ${index * 50}ms`}
+          >
+            <!-- Project Image Placeholder -->
+            <div class={`aspect-[4/3] bg-gradient-to-br ${project.color} transition-transform duration-500 group-hover:scale-110`}>
+              <div class="w-full h-full flex items-center justify-center">
+                <span class="text-white/30 text-6xl font-bold">{project.title.charAt(0)}</span>
+              </div>
+            </div>
+            
+            <!-- Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div class="absolute bottom-0 left-0 right-0 p-6">
+                <span class="text-via-orange text-sm font-medium">{project.category}</span>
+                <h3 class="text-white text-xl font-bold mt-1">{project.title}</h3>
+                <p class="text-gray-300 text-sm mt-2">{project.description}</p>
+              </div>
+            </div>
+
+            <!-- Year Badge -->
+            <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-via-gray-dark">
+              {project.year}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section-padding">
+    <div class="max-w-content mx-auto">
+      <div class="text-center mb-16">
+        <span class="section-label">Testimonials</span>
+        <h2 class="text-display-md font-bold mb-6">
+          What Clients Say
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial) => (
+          <div class="card relative">
+            <!-- Quote Icon -->
+            <svg class="w-10 h-10 text-via-orange/20 absolute top-6 right-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+            </svg>
+            
+            <p class="text-via-gray-light leading-relaxed mb-6 italic">
+              "{testimonial.quote}"
+            </p>
+            
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-via-orange to-via-red rounded-full flex items-center justify-center text-white font-semibold">
+                {testimonial.avatar}
+              </div>
+              <div>
+                <div class="font-semibold text-via-gray-dark">{testimonial.author}</div>
+                <div class="text-sm text-via-gray">{testimonial.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="section-padding bg-white">
+    <div class="max-w-content mx-auto">
+      <div class="text-center mb-16">
+        <span class="section-label">Our Process</span>
+        <h2 class="text-display-md font-bold mb-6">
+          How We Work
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        {[
+          { step: '01', title: 'Discover', description: 'We dive deep into your business, audience, and goals.' },
+          { step: '02', title: 'Design', description: 'Creating visual concepts that align with your brand.' },
+          { step: '03', title: 'Develop', description: 'Building robust, scalable solutions with clean code.' },
+          { step: '04', title: 'Deliver', description: 'Launching your project and providing ongoing support.' }
+        ].map((phase, index) => (
+          <div class="relative text-center" key={phase.step}>
+            <div class="text-6xl font-bold text-via-orange/10 mb-4">{phase.step}</div>
+            <h3 class="text-xl font-semibold mb-3">{phase.title}</h3>
+            <p class="text-via-gray-light">{phase.description}</p>
+            
+            {index < 3 && (
+              <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-via-orange/20 to-via-orange/0" />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-via-orange to-via-red">
+    <div class="max-w-content mx-auto text-center">
+      <h2 class="text-display-md font-bold text-white mb-6">
+        Ready to Start Your Project?
+      </h2>
+      <p class="text-white/90 text-lg max-w-2xl mx-auto mb-10">
+        Let's collaborate to create something extraordinary together.
+      </p>
+      <a href="/contact/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-via-orange font-medium rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Filter functionality
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('.project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Update active state
+      filterBtns.forEach(b => b.setAttribute('data-active', 'false'));
+      btn.setAttribute('data-active', 'true');
+
+      const filter = btn.getAttribute('data-filter');
+
+      // Filter projects
+      projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeIn 0.4s ease-out forwards';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Set initial active state
+  const allBtn = document.querySelector('[data-filter="all"]');
+  if (allBtn) allBtn.setAttribute('data-active', 'true');
+</script>
+
+<style>
+  [data-active="true"] {
+    background-color: #F58634;
+    color: white;
+    border-color: #F58634;
+  }
+</style>

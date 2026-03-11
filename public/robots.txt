@@ -1,0 +1,13 @@
+# Via Media - Robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://viamedia.com/sitemap.xml
+
+# Disallow admin/private areas if they exist
+Disallow: /admin/
+Disallow: /private/
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

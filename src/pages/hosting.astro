@@ -1,0 +1,296 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const plans = [
+  {
+    name: 'Starter',
+    description: 'Perfect for personal projects and small websites',
+    price: { monthly: 9, annual: 90 },
+    features: [
+      '1 Website',
+      '10 GB SSD Storage',
+      '100 GB Bandwidth',
+      'Free SSL Certificate',
+      'Email Support',
+      '99.5% Uptime Guarantee'
+    ],
+    cta: 'Get Started',
+    popular: false
+  },
+  {
+    name: 'Professional',
+    description: 'Ideal for growing businesses and e-commerce',
+    price: { monthly: 29, annual: 290 },
+    features: [
+      'Unlimited Websites',
+      '50 GB SSD Storage',
+      'Unlimited Bandwidth',
+      'Free SSL Certificate',
+      'Priority 24/7 Support',
+      'Daily Backups',
+      'CDN Included',
+      '99.9% Uptime Guarantee'
+    ],
+    cta: 'Get Started',
+    popular: true
+  },
+  {
+    name: 'Enterprise',
+    description: 'Maximum performance for demanding applications',
+    price: { monthly: 99, annual: 990 },
+    features: [
+      'Unlimited Websites',
+      '500 GB NVMe Storage',
+      'Unlimited Bandwidth',
+      'Free SSL Certificate',
+      'Dedicated Support Agent',
+      'Hourly Backups',
+      'Premium CDN',
+      'DDoS Protection',
+      '99.99% Uptime Guarantee',
+      'Custom PHP Configuration'
+    ],
+    cta: 'Contact Sales',
+    popular: false
+  }
+];
+
+const features = [
+  {
+    title: 'Lightning Fast',
+    description: 'NVMe SSDs and optimized servers ensure your site loads in milliseconds.',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+  },
+  {
+    title: 'Secure by Default',
+    description: 'Free SSL, automatic updates, and malware scanning keep your data safe.',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+  },
+  {
+    title: '24/7 Support',
+    description: 'Our expert team is always available to help you with any issues.',
+    icon: 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z'
+  },
+  {
+    title: 'Easy Scaling',
+    description: 'Upgrade your resources instantly as your traffic grows.',
+    icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'
+  },
+  {
+    title: 'Global CDN',
+    description: 'Content delivery network ensures fast loading worldwide.',
+    icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+  },
+  {
+    title: '99.9% Uptime',
+    description: 'Redundant infrastructure ensures your site is always online.',
+    icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'
+  }
+];
+
+const faqs = [
+  {
+    question: 'Can I upgrade my plan later?',
+    answer: 'Yes, you can upgrade or downgrade your hosting plan at any time. The price difference will be prorated.'
+  },
+  {
+    question: 'Do you offer a money-back guarantee?',
+    answer: 'Absolutely. We offer a 30-day money-back guarantee. If you\'re not satisfied, we\'ll refund your payment.'
+  },
+  {
+    question: 'Is migration from another host free?',
+    answer: 'Yes, we offer free website migration for all new hosting customers. Our team will handle everything.'
+  },
+  {
+    question: 'What control panel do you use?',
+    answer: 'We use cPanel, the industry-standard control panel, along with our custom dashboard for easy management.'
+  }
+];
+---
+
+<Layout 
+  title="Hosting"
+  description="Fast, secure, and reliable web hosting solutions. Choose from Starter, Professional, or Enterprise plans with 99.9% uptime guarantee."
+>
+  <!-- Hero Section -->
+  <section class="section-padding pt-32">
+    <div class="max-w-content mx-auto text-center">
+      <span class="section-label">Web Hosting</span>
+      <h1 class="text-display-md md:text-display-lg font-bold mb-6">
+        Hosting That <span class="gradient-text">Never Sleeps</span>
+      </h1>
+      <p class="text-xl text-via-gray-light max-w-2xl mx-auto mb-10">
+        Experience blazing-fast speeds, ironclad security, and 24/7 expert support. 
+        Your website deserves the best.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section-padding pt-0 bg-white">
+    <div class="max-w-content mx-auto">
+      <div class="grid lg:grid-cols-3 gap-8">
+        {plans.map((plan, index) => (
+          <div 
+            class={`relative card ${plan.popular ? 'border-2 border-via-orange shadow-xl scale-105 z-10' : ''}`}
+          >
+            {plan.popular && (
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                <span class="bg-via-orange text-white text-sm font-semibold px-4 py-1 rounded-full">
+                  Most Popular
+                </span>
+              </div>
+            )}
+            
+            <div class="text-center mb-8">
+              <h3 class="text-2xl font-bold mb-2">{plan.name}</h3>
+              <p class="text-via-gray-light text-sm mb-6">{plan.description}</p>
+              <div class="flex items-baseline justify-center gap-1">
+                <span class="text-5xl font-bold">${plan.price.monthly}</span>
+                <span class="text-via-gray-light">/month</span>
+              </div>
+              <p class="text-sm text-via-gray-light mt-2">
+                or ${plan.price.annual}/year (save ${(plan.price.monthly * 12 - plan.price.annual)})
+              </p>
+            </div>
+
+            <ul class="space-y-4 mb-8">
+              {plan.features.map((feature) => (
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 text-via-orange flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span class="text-via-gray-dark">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a 
+              href="/contact/" 
+              class={`btn-primary !w-full !justify-center ${!plan.popular ? '!bg-via-gray-dark hover:!bg-via-gray-dark/90' : ''}`}
+            >
+              {plan.cta}
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section-padding">
+    <div class="max-w-content mx-auto">
+      <div class="text-center mb-16">
+        <span class="section-label">Why Choose Us</span>
+        <h2 class="text-display-md font-bold mb-6">
+          Built for Performance
+        </h2>
+        <p class="text-via-gray-light max-w-2xl mx-auto">
+          Our hosting infrastructure is designed to deliver exceptional 
+          performance, security, and reliability.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {features.map((feature) => (
+          <div class="card group">
+            <div class="w-14 h-14 bg-via-orange/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-via-orange transition-colors duration-300">
+              <svg class="w-7 h-7 text-via-orange group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={feature.icon} />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">{feature.title}</h3>
+            <p class="text-via-gray-light leading-relaxed">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section-padding bg-white">
+    <div class="max-w-content mx-auto">
+      <div class="text-center mb-16">
+        <span class="section-label">Compare Plans</span>
+        <h2 class="text-display-md font-bold mb-6">
+          Find Your Perfect Fit
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="border-b-2 border-gray-100">
+              <th class="text-left py-4 px-6 font-semibold text-via-gray-dark">Feature</th>
+              <th class="text-center py-4 px-6 font-semibold text-via-gray-dark">Starter</th>
+              <th class="text-center py-4 px-6 font-semibold text-via-orange bg-via-orange/5">Professional</th>
+              <th class="text-center py-4 px-6 font-semibold text-via-gray-dark">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { feature: 'Websites', starter: '1', pro: 'Unlimited', enterprise: 'Unlimited' },
+              { feature: 'Storage', starter: '10 GB SSD', pro: '50 GB SSD', enterprise: '500 GB NVMe' },
+              { feature: 'Bandwidth', starter: '100 GB', pro: 'Unlimited', enterprise: 'Unlimited' },
+              { feature: 'SSL Certificate', starter: '✓', pro: '✓', enterprise: '✓' },
+              { feature: 'Daily Backups', starter: '—', pro: '✓', enterprise: '✓' },
+              { feature: 'CDN', starter: '—', pro: '✓', enterprise: '✓' },
+              { feature: 'Support', starter: 'Email', pro: '24/7 Priority', enterprise: 'Dedicated Agent' },
+              { feature: 'Uptime Guarantee', starter: '99.5%', pro: '99.9%', enterprise: '99.99%' }
+            ].map((row, index) => (
+              <tr class="border-b border-gray-100 hover:bg-gray-50">
+                <td class="py-4 px-6 text-via-gray-dark">{row.feature}</td>
+                <td class="py-4 px-6 text-center text-via-gray">{row.starter}</td>
+                <td class="py-4 px-6 text-center text-via-gray-dark font-medium bg-via-orange/5">{row.pro}</td>
+                <td class="py-4 px-6 text-center text-via-gray">{row.enterprise}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section-padding">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="section-label">FAQ</span>
+        <h2 class="text-display-md font-bold mb-6">
+          Common Questions
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <details class="group bg-white rounded-2xl border border-gray-200 open:border-via-orange/50 transition-colors duration-300">
+            <summary class="flex items-center justify-between cursor-pointer p-6 list-none">
+              <span class="font-semibold text-via-gray-dark pr-8">{faq.question}</span>
+              <svg class="w-5 h-5 text-via-gray flex-shrink-0 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-via-gray-light leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-via-gray-dark">
+    <div class="max-w-content mx-auto text-center">
+      <h2 class="text-display-md font-bold text-white mb-6">
+        Ready to Get Started?
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto mb-10">
+        Join hundreds of satisfied customers who trust Via Media with their hosting needs.
+      </p>
+      <a href="/contact/" class="btn-primary">
+        Choose Your Plan
+      </a>
+    </div>
+  </section>
+</Layout>
