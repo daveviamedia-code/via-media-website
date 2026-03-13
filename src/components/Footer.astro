@@ -5,17 +5,17 @@ const footerLinks = {
   services: [
     { href: '/hosting/', label: 'Web Hosting' },
     { href: '/portfolio/', label: 'Web Design' },
-    { href: '/support/', label: 'Support Plans' },
+    { href: '/support/', label: 'Support Pakketten' },
   ],
   company: [
-    { href: '/#about', label: 'About Us' },
-    { href: '/portfolio/', label: 'Our Work' },
+    { href: '/#about', label: 'Over Ons' },
+    { href: '/portfolio/', label: 'Ons Werk' },
     { href: '/contact/', label: 'Contact' },
   ],
   resources: [
-    { href: '/support/', label: 'Help Center' },
-    { href: '/support/#faq', label: 'FAQ' },
-    { href: '/contact/', label: 'Report Issue' },
+    { href: '/support/', label: 'Helpcentrum' },
+    { href: '/support/#faq', label: 'Veelgestelde Vragen' },
+    { href: '/contact/', label: 'Probleem Melden' },
   ],
 };
 
@@ -50,8 +50,8 @@ const socialLinks = [
           class="h-10 w-auto mb-6 brightness-0 invert"
         />
         <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-xs">
-          Digital solutions for modern businesses. We create stunning websites, 
-          provide reliable hosting, and deliver exceptional support.
+          Digitale oplossingen voor moderne bedrijven. Wij maken prachtige websites,
+          bieden betrouwbare hosting en leveren uitzonderlijke ondersteuning.
         </p>
         <!-- Social Links -->
         <div class="flex items-center gap-4">
@@ -70,7 +70,7 @@ const socialLinks = [
       <!-- Services Column -->
       <div>
         <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-          Services
+          Diensten
         </h3>
         <ul class="space-y-3">
           {footerLinks.services.map((link) => (
@@ -89,7 +89,7 @@ const socialLinks = [
       <!-- Company Column -->
       <div>
         <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-          Company
+          Bedrijf
         </h3>
         <ul class="space-y-3">
           {footerLinks.company.map((link) => (
@@ -108,7 +108,7 @@ const socialLinks = [
       <!-- Resources Column -->
       <div>
         <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-          Resources
+          Bronnen
         </h3>
         <ul class="space-y-3">
           {footerLinks.resources.map((link) => (
@@ -128,14 +128,14 @@ const socialLinks = [
     <!-- Bottom Bar -->
     <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
       <p class="text-gray-500 text-sm">
-        &copy; {currentYear} Via Media. All rights reserved.
+        &copy; {currentYear} Via Media. Alle rechten voorbehouden.
       </p>
       <div class="flex items-center gap-6">
         <a href="#" class="text-gray-500 text-sm hover:text-gray-300 transition-colors">
-          Privacy Policy
+          Privacybeleid
         </a>
         <a href="#" class="text-gray-500 text-sm hover:text-gray-300 transition-colors">
-          Terms of Service
+          Algemene Voorwaarden
         </a>
       </div>
     </div>

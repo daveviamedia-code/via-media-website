@@ -1,62 +1,62 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const categories = ['All', 'Web Design', 'E-Commerce', 'Branding', 'Web Apps'];
+const categories = ['Alle', 'Web Design', 'E-Commerce', 'Branding', 'Web Apps'];
 
 const projects = [
   {
     title: 'Modern Furniture Co.',
     category: 'Web Design',
-    description: 'Minimalist e-commerce experience for a premium furniture brand',
+    description: 'Minimalistische e-commerce ervaring voor een premium meubelmerk',
     color: 'from-orange-400 to-red-500',
     year: '2025'
   },
   {
     title: 'TechStart Dashboard',
     category: 'Web Apps',
-    description: 'Analytics dashboard for SaaS startup with real-time data',
+    description: 'Analytics dashboard voor SaaS startup met real-time data',
     color: 'from-gray-600 to-gray-800',
     year: '2025'
   },
   {
     title: 'Artisan Coffee',
     category: 'Branding',
-    description: 'Complete brand identity for specialty coffee roaster',
+    description: 'Complete merkidentiteit voor speciale koffiebrander',
     color: 'from-amber-600 to-orange-700',
     year: '2024'
   },
   {
     title: 'FitLife App',
     category: 'Web Apps',
-    description: 'Fitness tracking application with social features',
+    description: 'Fitness tracking applicatie met sociale functies',
     color: 'from-red-500 to-pink-600',
     year: '2024'
   },
   {
     title: 'Luxe Fashion',
     category: 'E-Commerce',
-    description: 'High-end fashion boutique with AR try-on features',
+    description: 'High-end modeboetiek met AR pasfuncties',
     color: 'from-purple-600 to-indigo-700',
     year: '2024'
   },
   {
     title: 'Green Energy Corp',
     category: 'Web Design',
-    description: 'Corporate website for renewable energy company',
+    description: 'Bedrijfswebsite voor duurzaam energiebedrijf',
     color: 'from-emerald-500 to-teal-600',
     year: '2023'
   },
   {
     title: 'Urban Architecture',
     category: 'Branding',
-    description: 'Brand refresh for award-winning architecture firm',
+    description: 'Merktopfrisbeurt voor bekroond architectenbureau',
     color: 'from-slate-600 to-slate-800',
     year: '2023'
   },
   {
     title: 'Fresh Market',
     category: 'E-Commerce',
-    description: 'Online grocery platform with same-day delivery',
+    description: 'Online boodschappenplatform met zelfde-dag levering',
     color: 'from-green-500 to-emerald-600',
     year: '2023'
   }
@@ -64,19 +64,19 @@ const projects = [
 
 const testimonials = [
   {
-    quote: "Via Media transformed our online presence. Our conversion rate increased by 150% after the redesign.",
+    quote: "Via Media heeft onze online aanwezigheid getransformeerd. Onze conversieratio steeg met 150% na de herontwerp.",
     author: "Sarah Chen",
     role: "CEO, TechStart",
     avatar: "SC"
   },
   {
-    quote: "The team's attention to detail and creative vision exceeded our expectations. Truly exceptional work.",
+    quote: "Het team zijn oog voor detail en creatieve visie overtroffen onze verwachtingen. Echt uitzonderlijk werk.",
     author: "Marcus Johnson",
-    role: "Founder, Luxe Fashion",
+    role: "Oprichter, Luxe Fashion",
     avatar: "MJ"
   },
   {
-    quote: "Professional, responsive, and incredibly talented. They delivered on time and on budget.",
+    quote: "Professioneel, responsief en ongelooflijk getalenteerd. Ze leverden op tijd en binnen budget.",
     author: "Emily Rodriguez",
     role: "Marketing Director, Fresh Market",
     avatar: "ER"
@@ -84,21 +84,21 @@ const testimonials = [
 ];
 ---
 
-<Layout 
+<Layout
   title="Portfolio"
-  description="Explore our portfolio of web design, e-commerce, branding, and web application projects. See how we've helped businesses succeed."
+  description="Verken ons portfolio van webdesign, e-commerce, branding en webapplicatie projecten. Bekijk hoe we bedrijven hebben geholpen slagen."
 >
   <!-- Hero Section -->
   <section class="section-padding pt-32">
     <div class="max-w-content mx-auto">
       <div class="text-center mb-16">
-        <span class="section-label">Our Work</span>
+        <span class="section-label">Ons Werk</span>
         <h1 class="text-display-md md:text-display-lg font-bold mb-6">
-          Crafting Digital <span class="gradient-text">Masterpieces</span>
+          Digitale <span class="gradient-text">Meesterwerken</span> Creëren
         </h1>
         <p class="text-xl text-via-gray-light max-w-2xl mx-auto">
-          Explore our portfolio of award-winning designs and innovative 
-          digital solutions.
+          Verken ons portfolio van bekroonde ontwerpen en innovatieve
+          digitale oplossingen.
         </p>
       </div>
 
@@ -160,9 +160,9 @@ const testimonials = [
   <section class="section-padding">
     <div class="max-w-content mx-auto">
       <div class="text-center mb-16">
-        <span class="section-label">Testimonials</span>
+        <span class="section-label">Getuigenissen</span>
         <h2 class="text-display-md font-bold mb-6">
-          What Clients Say
+          Wat Klanten Zeggen
         </h2>
       </div>
 
@@ -197,18 +197,18 @@ const testimonials = [
   <section class="section-padding bg-white">
     <div class="max-w-content mx-auto">
       <div class="text-center mb-16">
-        <span class="section-label">Our Process</span>
+        <span class="section-label">Ons Proces</span>
         <h2 class="text-display-md font-bold mb-6">
-          How We Work
+          Hoe We Werken
         </h2>
       </div>
 
       <div class="grid md:grid-cols-4 gap-8">
         {[
-          { step: '01', title: 'Discover', description: 'We dive deep into your business, audience, and goals.' },
-          { step: '02', title: 'Design', description: 'Creating visual concepts that align with your brand.' },
-          { step: '03', title: 'Develop', description: 'Building robust, scalable solutions with clean code.' },
-          { step: '04', title: 'Deliver', description: 'Launching your project and providing ongoing support.' }
+          { step: '01', title: 'Ontdekken', description: 'We duiken diep in uw bedrijf, doelgroep en doelen.' },
+          { step: '02', title: 'Ontwerpen', description: 'Visuele concepten creëren die aansluiten bij uw merk.' },
+          { step: '03', title: 'Ontwikkelen', description: 'Robuuste, schaalbare oplossingen bouwen met schone code.' },
+          { step: '04', title: 'Opleveren', description: 'Uw project lanceren en doorlopende ondersteuning bieden.' }
         ].map((phase, index) => (
           <div class="relative text-center" key={phase.step}>
             <div class="text-6xl font-bold text-via-orange/10 mb-4">{phase.step}</div>
